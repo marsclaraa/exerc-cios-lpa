@@ -166,3 +166,12 @@ Route::get('/subtração', function(Request $request){
                                             return 'Em ' . $dias . ' dias, temos ' . $horas . ' horas, ' . $minutos . ' minutos e ' . $segundos . ' segundos.' ; 
                                            
                                            }); 
+
+                                           Route::get('/total da compra', function(Request $request){ 
+
+                                            $preçoDoProduto = $request->input("Preço do Produto"); 
+                                            $quantidadeComprada = $request->input("Quantidade Comprada"); 
+                                            $preço = $preçoDoProduto * $quantidadeComprada; 
+                                            return 'O valor total da compra é de:  ' .  $preço;  
+                                            
+                                              }); 
