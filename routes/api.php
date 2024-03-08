@@ -61,3 +61,16 @@ Route::get('/subtração', function(Request $request){
         return 'O resultado da soma dos números ' . $primeiroNumero . ':' . $segundoNumero . ' = ' . $resultado; 
 
             }); 
+
+
+            Route::get('/multiplicação', function(Request $request){ 
+
+ 
+                $primeiroNumero = $request->input("numeral 1"); 
+                $segundoNumero = $request->input("numeral 2"); 
+                $resultado = $primeiroNumero * $segundoNumero; 
+                return 'O resultado da multiplicação dos números ' . $primeiroNumero . 'x' . $segundoNumero . ' = ' . $resultado; 
+    
+                }); 
+    
+     
