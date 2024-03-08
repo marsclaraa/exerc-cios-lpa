@@ -104,4 +104,13 @@ Route::get('/subtração', function(Request $request){
                             return 'O dobro do número  é igual a ' . $resultado; 
             
                             }); 
+
+                            Route::get('/área do retângulo', function(Request $request){
+                                
+                                $base = $request->input("base");
+                                $altura = $request->input("altura"); 
+                                $resultado = $base * $altura;
+                                return 'a área do retângulo é ' . $resultado; 
+            
+                                }); 
      
