@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/Usuario', function (Request $request){ 
 
     $Usuario = $request->input("Nome"); 
-
     return $Usuario; 
 
 }); 
@@ -15,9 +14,17 @@ Route::get('/Usuario', function (Request $request){
 Route::get('/Dados', function (Request $request){ 
 
     $Dado1 = $request->input("nome"); 
-
     $Dado2 = $request->input("idade"); 
-
     return 'Meu nome é ' . $Dado1 . ', tenho ' . $Dado2 . ' anos de idade';  
+
+}); 
+
+Route::get('/Informações', function (Request $request){ 
+    
+
+    $NOME = $request->input("nome"); 
+    $AN = $request->input("ano de nascimento"); 
+    $CN = $request->input("cidade natal"); 
+    return 'Meu nome é ' . $NOME . ', nasci no ano de ' . $AN . ', na cidade de ' . $CN ;   
 
 }); 
