@@ -73,4 +73,19 @@ Route::get('/subtração', function(Request $request){
     
                 }); 
     
+                Route::get('/média', function(Request $request){ 
+
+                    $NOTA1 = $request->input("NOTA 1"); 
+                    $NOTA2 = $request->input("NOTA 2"); 
+                    $NOTA3 = $request->input("NOTA 3"); 
+                    $NOTA4 = $request->input("NOTA 4");
+                    $NOTA5 = $request->input("NOTA 5"); 
+                    $DIVISÃO = $request->input("DIVISÃO"); 
+                    $resultado = ($NOTA1 + $NOTA2 + $NOTA3 + $NOTA4 + $NOTA5) / $DIVISÃO; 
+
+                    return 'A media do usuário é ' . $resultado . '.'; 
+        
+                    }); 
+        
+         
      
