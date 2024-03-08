@@ -152,6 +152,17 @@ Route::get('/subtração', function(Request $request){
                                         $vendas = $request->input("valor das vendas"); 
                                         $comissão = ($vendas * 5)/100; 
 
+
                                         return 'A comissão será de: ' .  $comissão; 
                                         }); 
              
+                                        Route::get('/dias', function(Request $request){ 
+
+                                            $dias = $request->input("dias"); 
+                                            $horas = $dias*24; 
+                                            $minutos = $dias*1440; 
+                                            $segundos = $dias*86400; 
+ 
+                                            return 'Em ' . $dias . ' dias, temos ' . $horas . ' horas, ' . $minutos . ' minutos e ' . $segundos . ' segundos.' ; 
+                                           
+                                           }); 
