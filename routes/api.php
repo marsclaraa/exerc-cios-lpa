@@ -96,4 +96,12 @@ Route::get('/subtração', function(Request $request){
             
                         }); 
          
+                        Route::get('/dobro', function(Request $request){ 
+
+                            $primeiroNumero = $request->input("numeral 1"); 
+                            $dobro = $request->input("dobro"); 
+                            $resultado = $primeiroNumero * $dobro; 
+                            return 'O dobro do número  é igual a ' . $resultado; 
+            
+                            }); 
      
