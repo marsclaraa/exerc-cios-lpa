@@ -140,11 +140,18 @@ Route::get('/subtração', function(Request $request){
 
                                         Route::get('/programa de fidelidade', function(Request $request){ 
 
-                                            $valorDaCompra = $request->input("valor da compra"); 
-                                            $pontosDeRecompensa = $valorDaCompra/10; 
+                                        $valorDaCompra = $request->input("valor da compra"); 
+                                        $pontosDeRecompensa = $valorDaCompra/10; 
 
-                                            return 'Os pontos de recompensa serão: ' . $pontosDeRecompensa;  
+                                        return 'Os pontos de recompensa serão: ' . $pontosDeRecompensa;  
             
-                                            }); 
-            
+                                         }); 
+
+                                        Route::get('/comissão', function(Request $request){ 
+
+                                        $vendas = $request->input("valor das vendas"); 
+                                        $comissão = ($vendas * 5)/100; 
+
+                                        return 'A comissão será de: ' .  $comissão; 
+                                        }); 
              
