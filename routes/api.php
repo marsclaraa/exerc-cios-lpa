@@ -10,3 +10,14 @@ Route::get('/Usuario', function (Request $request){
     return $Usuario; 
 
 }); 
+
+
+Route::get('/Dados', function (Request $request){ 
+
+    $Dado1 = $request->input("nome"); 
+
+    $Dado2 = $request->input("idade"); 
+
+    return 'Meu nome é ' . $Dado1 . ', tenho ' . $Dado2 . ' anos de idade';  
+
+}); 
