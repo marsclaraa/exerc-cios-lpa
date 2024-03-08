@@ -106,7 +106,7 @@ Route::get('/subtração', function(Request $request){
                             }); 
 
                             Route::get('/área do retângulo', function(Request $request){
-                                
+
                                 $base = $request->input("base");
                                 $altura = $request->input("altura"); 
                                 $resultado = $base * $altura;
@@ -114,3 +114,12 @@ Route::get('/subtração', function(Request $request){
             
                                 }); 
      
+                                Route::get('/desconto', function(Request $request){ 
+
+                                    $preço = $request->input("Preço do Produto"); 
+                                    $porcentagem = $request->input("Porcentagem"); 
+                                    $resultado = $preço - ($preço * $porcentagem / 100) ;   
+            
+                                    return 'O preço final do produto será = ' . $resultado; 
+            
+                                    }); 
