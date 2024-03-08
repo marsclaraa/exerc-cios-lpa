@@ -28,3 +28,12 @@ Route::get('/Informações', function (Request $request){
     return 'Meu nome é ' . $NOME . ', nasci no ano de ' . $AN . ', na cidade de ' . $CN ;   
 
 }); 
+
+Route::get('/soma', function(Request $request){ 
+
+    $primeiroNumero = $request->input("numeral 1"); 
+    $segundoNumero = $request->input("numeral 2"); 
+    $resultado = $primeiroNumero + $segundoNumero; 
+    return 'O resultado da soma dos números ' . $primeiroNumero . '+' . $segundoNumero . ' = ' . $resultado; 
+
+    }); 
