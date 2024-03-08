@@ -137,3 +137,14 @@ Route::get('/subtração', function(Request $request){
                                         return 'O salário anterior era de ' . $salarioAnterior . ' .O salário atual é ' . $salarioAtual . ' .O aumento salarial será de ' . $resultado; 
             
                                         }); 
+
+                                        Route::get('/programa de fidelidade', function(Request $request){ 
+
+                                            $valorDaCompra = $request->input("valor da compra"); 
+                                            $pontosDeRecompensa = $valorDaCompra/10; 
+
+                                            return 'Os pontos de recompensa serão: ' . $pontosDeRecompensa;  
+            
+                                            }); 
+            
+             
