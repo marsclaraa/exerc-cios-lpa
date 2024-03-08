@@ -123,3 +123,17 @@ Route::get('/subtração', function(Request $request){
                                     return 'O preço final do produto será = ' . $resultado; 
             
                                     }); 
+
+
+                                    Route::get('/aumento salarial', function(Request $request){ 
+
+ 
+
+                                        $salarioAnterior = $request->input("Salário Anterior"); 
+                                        $salarioAtual= $request->input("Salário Atual"); 
+                                        $porcentual=$request->input("Porcentual de Aumento"); 
+                                        $resultado = ($salarioAnterior * $porcentual / 100) ;   
+            
+                                        return 'O salário anterior era de ' . $salarioAnterior . ' .O salário atual é ' . $salarioAtual . ' .O aumento salarial será de ' . $resultado; 
+            
+                                        }); 
