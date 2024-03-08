@@ -87,5 +87,13 @@ Route::get('/subtração', function(Request $request){
         
                     }); 
         
+                    Route::get('/divisão', function(Request $request){ 
+ 
+                        $primeiroNumero = $request->input("numeral 1"); 
+                        $segundoNumero = $request->input("numeral 2");
+                        $resultado = $segundoNumero / $primeiroNumero;
+                        return 'O resultado da divisão dos números ' . $segundoNumero . ':' . $primeiroNumero . ' = ' . $resultado; 
+            
+                        }); 
          
      
