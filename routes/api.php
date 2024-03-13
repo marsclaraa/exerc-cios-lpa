@@ -81,13 +81,13 @@ Route::get('/subtração', function(Request $request){
                     $NOTA4 = $request->input("NOTA 4");
                     $NOTA5 = $request->input("NOTA 5"); 
                     $DIVISÃO = $request->input("DIVISÃO"); 
-                    $resultado = ($NOTA1 + $NOTA2 + $NOTA3 + $NOTA4 + $NOTA5) / $DIVISÃO; 
+                    $resultado = ($NOTA1 + $NOTA2 + $NOTA3 + $NOTA4 + $NOTA5) / 5; 
 
                     return 'A media do usuário é ' . $resultado . '.'; 
         
                     }); 
         
-                    Route::get('/divisão', function(Request $request){ 
+                    Route::get('/divisão/inversa', function(Request $request){ 
  
                         $primeiroNumero = $request->input("numeral 1"); 
                         $segundoNumero = $request->input("numeral 2");
@@ -99,8 +99,8 @@ Route::get('/subtração', function(Request $request){
                         Route::get('/dobro', function(Request $request){ 
 
                             $primeiroNumero = $request->input("numeral 1"); 
-                            $dobro = $request->input("dobro"); 
-                            $resultado = $primeiroNumero * $dobro; 
+                         
+                            $resultado = $primeiroNumero * 2; 
                             return 'O dobro do número  é igual a ' . $resultado; 
             
                             }); 
@@ -130,11 +130,12 @@ Route::get('/subtração', function(Request $request){
  
 
                                         $salarioAnterior = $request->input("Salário Anterior"); 
-                                        $salarioAtual= $request->input("Salário Atual"); 
-                                        $porcentual=$request->input("Porcentual de Aumento"); 
-                                        $resultado = ($salarioAnterior * $porcentual / 100) ;   
+                                        $porcentual=$request->input("Porcentual de Aumento");
             
-                                        return 'O salário anterior era de ' . $salarioAnterior . ' .O salário atual é ' . $salarioAtual . ' .O aumento salarial será de ' . $resultado; 
+                                        $aumento = ($porcentual / 100) * $salarioAnterior;
+                                        $salarioAtual= $aumento + $salarioAnterior;
+            
+                                        return 'O salário anterior era de ' . $salarioAnterior . ' .O salário atual é ' . $salarioAtual . ' .O aumento salarial será de ' . $aumento . ' reais' ; 
             
                                         }); 
 
@@ -175,3 +176,5 @@ Route::get('/subtração', function(Request $request){
                                             return 'O valor total da compra é de:  ' .  $preço;  
                                             
                                               }); 
+
+                                            
