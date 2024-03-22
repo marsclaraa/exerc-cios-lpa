@@ -20,7 +20,7 @@ git clone https://github.com/marsclaraa/exerc-cios-lpa.git
 ```
 2.  Acesse o diretório do projeto
 ```
-cd exercicios-lpa
+cd exerc-cios-lpa
 ```
 3. Iniciando o projeto
 ```
