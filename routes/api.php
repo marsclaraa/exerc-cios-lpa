@@ -419,3 +419,20 @@ Route::get('exercício20', function (Request $request) {
         return  $numero1 / $numero2;
     }
 });
+
+
+Route::get('atividade1', function (Request $request) {
+
+    $NOTA1 = $request->input("NOTA 1");
+    $NOTA2 = $request->input("NOTA 2");
+    $NOTA3 = $request->input("NOTA 3");
+
+    $resultado = ($NOTA1 + $NOTA2 + $NOTA3) / 3;
+
+    if ($resultado >= 7) {
+    return 'O aluno foi aprovado';
+} else {
+    return 'O aluno não foi aprovado';
+}
+
+});
