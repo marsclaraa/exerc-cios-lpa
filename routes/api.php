@@ -430,9 +430,47 @@ Route::get('atividade1', function (Request $request) {
     $resultado = ($NOTA1 + $NOTA2 + $NOTA3) / 3;
 
     if ($resultado >= 7) {
-    return 'O aluno foi aprovado';
+    return 'O aluno foi aprovado com a média ' . $resultado;
 } else {
-    return 'O aluno não foi aprovado';
+    return 'O aluno não foi aprovado com a média ' . $resultado;
+}
+
+});
+
+Route::get('atividade2', function (Request $request) {
+
+    $renda = $request->input("valor da renda");
+    
+    if ($renda <= 1900) {
+        
+            return 'o imposto é isento';
+        }
+
+    if ($renda >= 1901) 
+        if ($renda <= 2800) {
+            return 'o seu imposto de renda é igual a ' . ($renda * 7 / 100);
+        } 
+
+        if ($renda >= 2801) 
+            if ($renda <= 3700) {
+                return 'o seu imposto de renda é igual a ' . ($renda * 15 / 100);
+            } 
+
+   if ($renda >= 3700) {
+ return 'o seu imposto de renda é igual a ' . ($renda * 22 / 100);
+  }
+     
+
+});
+
+
+Route::get('atividade3', function (Request $request) {
+
+    $ano = $request->input("ano");
+    if ($ano % 4 == 0) {
+    return 'O ano' . $ano .  ' é bissesto' ;
+} else {
+    return 'O ano' . $ano .  ' não é bissesto' ;
 }
 
 });
