@@ -248,72 +248,174 @@ Route::get('lista/exercício6', function (Request $request) {
     }
 });
 
-Route::get ('exercício7',function(Request $request){ 
+Route::get('exercício7', function (Request $request) {
 
-    echo 'Qual a temperatura atual? ';  
+    echo 'Qual a temperatura atual? ';
 
-    $temperatura = $request -> input ('grau de temperatura'); 
+    $temperatura = $request->input('grau de temperatura');
 
-    if ($temperatura >= 30){; 
+    if ($temperatura >= 30) {;
 
-    return $temperatura . "°, ESTÁ QUENTE!"; 
+        return $temperatura . "°, ESTÁ QUENTE!";
+    } else {;
 
-    } else {; 
-
-        return $temperatura . "°, Não está tão quente..."; 
-
-    } 
-
-    }); 
+        return $temperatura . "°, Não está tão quente...";
+    }
+});
 
 
-    Route::get('exercício8', function(Request $request){
-        $numero = $request->input('numero');
-    
-       if($numero % 7 == 0){
+Route::get('exercício8', function (Request $request) {
+    $numero = $request->input('numero');
+
+    if ($numero % 7 == 0) {
         return $numero . ', é múltiplo de 7!';
-       } else {
+    } else {
         return $numero . ', não é múltiplo de 7!';
-       }
-    
-    });
+    }
+});
 
-    Route::get('exercício9', function(Request $request){
-        $idade = $request->input('idade');
-      
-        if($idade <= 12){
-          return $idade . " anos, você é uma criança!";
-               
-          } else {
-              return $idade . "anos, você não é criança!";
-          
-          }
-      
-           });
+Route::get('exercício9', function (Request $request) {
+    $idade = $request->input('idade');
 
-           Route::get('exercício10', function(Request $request){
-            $numero = $request->input('numero');
-            if($numero < 0) 
-            if ($numero % 2 == 0){
-            return "o número" . $numero . "é neagtivo e par";
-             } elseif($numero > 0) 
-             if ($numero % 2 > 0){
+    if ($idade <= 12) {
+        return $idade . " anos, você é uma criança!";
+    } else {
+        return $idade . "anos, você não é criança!";
+    }
+});
+
+Route::get('exercício10', function (Request $request) {
+    $numero = $request->input('numero');
+    if ($numero < 0)
+        if ($numero % 2 == 0) {
+            return "o número" . $numero . "é negativo e par";
+        } elseif ($numero > 0)
+            if ($numero % 2 > 0) {
                 return "o número" . $numero . "é positivo e impar";
-             }
-  
-            });
+            }
+});
 
-            Route::get('exercício11', function(Request $request){
-                $numero = $request->input('numero');
-              
-                if($numero = 100){
-                  return  $numero . ", é = a cem";
-                       
-                  } elseif ($numero < 100) {
-                      return  $numero .", é maior que 100";
-                     }
+Route::get('exercício11', function (Request $request) {
+    $numero = $request->input('numero');
 
-                     else {
-                        return $numero .", é menor que 100";
-                     }
-                   });
+    if ($numero = 100) {
+        return  $numero . ", é = a cem";
+    } elseif ($numero < 100) {
+        return  $numero . ", é maior que 100";
+    } else {
+        return $numero . ", é menor que 100";
+    }
+});
+
+Route::get('exercício12', function (Request $request) {
+
+    $numero = $request->input('número');
+
+    if ($numero % 6 == 0) {
+
+        return $numero . ", é divisível por 6!";
+    } else {
+
+        return $numero . ", não é divisível por 6!";
+    }
+});
+
+Route::get('exercício13', function (Request $request) {
+
+    $nome = $request->input('nome');
+
+    if ($nome = 'Alice') {
+
+        return "Olá Alice!";
+    } else {
+
+        return "Você não é a Alice!";
+    }
+});
+
+Route::get('exercício14', function (Request $request) {
+    $idade = $request->input('idade');
+    $carteira = $request->input('carteira de motorista (sim/não)');
+
+
+    if ($idade >= 18) {
+        if ($carteira == "sim") {
+            return "
+                        
+                         Você pode dirigir";
+        }
+    } else {
+        return "
+                            
+                             Você não pode dirigir!";
+    }
+});
+
+Route::get('exercício16', function (Request $request) {
+
+    $numero1 = $request->input('número 1');
+
+    $numero2 = $request->input('número 2');
+
+    if ($numero1 != $numero2)
+        if ($numero1 < $numero2) {
+
+            return "O número 1 (" . $numero1 . ") é menor que o número 2.";
+        } else {
+            return "O número 2 (" . $numero2 . ") é menor que o número 1.";
+        }
+});
+
+
+Route::get('exercício17', function (Request $request) {
+    $idade = $request->input('idade');
+    $nome = $request->input('nome');
+
+    if ($idade >= 18) {
+
+        return "Você é maior de idade " . $nome;
+    } else {
+        return "Você é menor de idade " . $nome;
+    }
+});
+
+Route::get('exercício18', function (Request $request) {
+
+    $numero1 = $request->input('número 1');
+    $numero2 = $request->input('número 2');
+
+
+    if ($numero1 == 0) {
+
+        return 'não
+                                    é possível efetuar a divisão pois o primeiro número é zero';
+    } elseif ($numero2 == 0) {
+
+        return 'não é possível efetuar a divisão pois o 
+                                    segundo número é zero';
+    } else {
+        return 'é possivel efetuar a divisão!';
+    }
+});
+
+Route::get('exercício19', function (Request $request) {
+    $numero1 = $request->input('número 1');
+    $numero2 = $request->input('número 2');
+
+    if ($numero1 * $numero2 > 100) {
+        return   "O resultado da multiplicação é maior que cem";
+    } else {
+        return "O resultado da multiplicação é menor que cem";
+    }
+});
+
+Route::get('exercício20', function (Request $request) {
+    $numero1 = $request->input('número 1');
+    $numero2 = $request->input('número 2');
+
+    if ($numero1 + $numero2 % 2 == 0) {
+        return  $numero1 * $numero2;
+    } else {
+        return  $numero1 / $numero2;
+    }
+});
